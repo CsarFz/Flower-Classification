@@ -1,0 +1,155 @@
+/**
+ * Reference:
+ * https://github.com/HugoGiraudel/sass-boilerplate
+ * https://sass-lang.com/guide
+ */
+/**
+ * Set up a decent box model on the root element
+ */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&display=swap");
+html {
+  box-sizing: border-box;
+}
+
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+@media (min-width: 1921px) {
+  .container {
+    margin: 0 auto !important;
+  }
+}
+/**
+ * Basic typography style for copy text
+ */
+body {
+  color: #858B9D;
+  font-family: "Open Sans", serif;
+}
+@media (min-width: 1440px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+.text-bold {
+  font-weight: 600;
+}
+
+/**
+ * Set up the corresponding fonts
+ */
+.bg-primary-flower {
+  background-color: #E9155F !important;
+}
+.bg-primary-50-flower {
+  background-color: #F786AE !important;
+}
+.bg-primary-25-flower {
+  background-color: #FDD0E0 !important;
+}
+.bg-secondary-flower {
+  background-color: #2659FB !important;
+}
+.bg-secondary-50-flower {
+  background-color: #9FB6FF !important;
+}
+.bg-secondary-25-flower {
+  background-color: #D9E2FF !important;
+}
+.bg-gray-flower {
+  background-color: #ECF0F4 !important;
+}
+.bg-gray-50-flower {
+  background-color: #F5F7F9 !important;
+}
+.bg-gray-25-flower {
+  background-color: #BDC0C7 !important;
+}
+.bg-dark-flower {
+  background-color: #141726 !important;
+}
+.bg-dark-50-flower {
+  background-color: #858B9D !important;
+}
+.bg-dark-25-flower {
+  background-color: #BCC0C7 !important;
+}
+.bg-white-flower {
+  background-color: #FFFFFF !important;
+}
+
+.color-primary-flower {
+  color: #E9155F;
+}
+.color-primary-50-flower {
+  color: #F786AE;
+}
+.color-primary-25-flower {
+  color: #FDD0E0;
+}
+.color-secondary-flower {
+  color: #2659FB;
+}
+.color-secondary-50-flower {
+  color: #9FB6FF;
+}
+.color-secondary-25-flower {
+  color: #D9E2FF;
+}
+.color-gray-flower {
+  color: #ECF0F4;
+}
+.color-gray-50-flower {
+  color: #F5F7F9;
+}
+.color-gray-25-flower {
+  color: #BDC0C7;
+}
+.color-dark-flower {
+  color: #141726;
+}
+.color-dark-50-flower {
+  color: #858B9D;
+}
+.color-dark-25-flower {
+  color: #BCC0C7;
+}
+.color-white-flower {
+  color: #FFFFFF;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  padding: 65px 1rem 0;
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
+}
+
+.navbar .navbar-toggler {
+  right: 1rem;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: #E9155F;
+}
+
+.content {
+  overflow: hidden;
+  padding: 2rem 1rem;
+  transition: all 0.3s;
+}

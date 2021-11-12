@@ -1,0 +1,15 @@
+.bg {
+  @each $name, $color in $colors {
+    &-#{$name} {
+      background-color: $color !important;
+    }
+  }
+}
+
+.color {
+  @each $name, $color in $colors {
+    &-#{$name} {
+      color: $color;
+    }
+  }
+}

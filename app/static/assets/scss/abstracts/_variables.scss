@@ -1,0 +1,65 @@
+/// Font Family
+/// Roboto
+/// @type List
+$open-sans-font: 'Open Sans', serif !default;
+
+/// Font Size
+$header-1: (xxl: 54px, xl: 54px, xs: 36px);
+$header-2: (xxl: 40px, xl: 48px, xs: 32px);
+$header-3: (xxl: 32px, xl: 32px, xs: 28px);
+$paragraph-1: (xxl: 16px, xl: 16px, xs: 14px);
+$paragraph-2: (xxl: 16px, xl: 16px, xs: 14px);
+$paragraph-3: (xxl: 14px, xl: 14px, xs: 14px);
+$caption: (xxl: 12px, xl: 10px, xs: 8px);
+
+/// Colors
+/// @type Color
+$primary-flower: #E9155F !default;
+$primary-50-flower: #F786AE !default;
+$primary-25-flower: #FDD0E0 !default;
+$secondary-flower: #2659FB !default;
+$secondary-50-flower: #9FB6FF !default;
+$secondary-25-flower: #D9E2FF !default;
+$gray-flower: #ECF0F4 !default;
+$gray-50-flower: #F5F7F9 !default;
+$gray-25-flower: #BDC0C7 !default;
+$dark-flower: #141726 !default;
+$dark-50-flower: #858B9D !default;
+$dark-25-flower: #BCC0C7 !default;
+$white-flower: #FFFFFF !default;
+
+$colors: () !default;
+$colors: map-merge((
+  "primary-flower": $primary-flower,
+  "primary-50-flower": $primary-50-flower,
+  "primary-25-flower": $primary-25-flower,
+  "secondary-flower": $secondary-flower,
+  "secondary-50-flower": $secondary-50-flower,
+  "secondary-25-flower": $secondary-25-flower,
+  "gray-flower": $gray-flower,
+  "gray-50-flower": $gray-50-flower,
+  "gray-25-flower": $gray-25-flower,
+  "dark-flower": $dark-flower,
+  "dark-50-flower": $dark-50-flower,
+  "dark-25-flower": $dark-25-flower,
+  "white-flower": $white-flower,
+), $colors);
+
+// Grid Breakpoints
+$grid-breakpoints: (
+  // Extra small screen / phone
+  xs: 0,
+  xsm: 350px,
+  // Small screen / phone
+  sm: 576px,
+  // Medium screen / tablet
+  md: 768px,
+  // Large screen / desktop
+  lg: 992px,
+  // Extra large screen / wide desktop
+  xl: 1200px,
+  // Extra extra large screen / 4K
+  xxl: 1440px
+);
+
+$sizes: ('xs', 'xsm', 'sm', 'md', 'lg', 'xl', 'xxl')

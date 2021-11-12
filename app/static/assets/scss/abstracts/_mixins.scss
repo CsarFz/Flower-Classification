@@ -1,0 +1,48 @@
+/// Hover
+@mixin hover {
+    &:hover { @content; }
+  }
+  
+  @mixin hover-focus {
+    &:hover,
+    &:focus {
+      @content;
+    }
+  }
+  
+  @mixin plain-hover-focus {
+    &,
+    &:hover,
+    &:focus {
+      @content;
+    }
+  }
+  
+  @mixin hover-focus-active {
+    &:hover,
+    &:focus,
+    &:active {
+      @content;
+    }
+  }
+  
+  @mixin hover-focus-outlined {
+    &.outlined:hover,
+    &.outlined:focus {
+      @content;
+    }
+  }
+  
+  /// Screen Size
+  @mixin breakpoint($size) {
+    @media (min-width: map_get($grid-breakpoints, $size)) {
+      @content
+    }
+  }
+  
+  @mixin breakpoint_yana() {
+    @media (min-width: 1920px) {
+      @content
+    }
+  }
+  

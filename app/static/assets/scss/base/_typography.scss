@@ -1,0 +1,23 @@
+/**
+ * Basic typography style for copy text
+ */
+body {
+    color: $dark-50-flower;
+    font-family: $open-sans-font;
+
+    @each $size in 'xxl' {
+        @include breakpoint($size) {
+            font-size: map_get($paragraph-1, $size);
+        }
+    }
+}
+
+.text-bold {
+    font-weight: 600
+}
+
+// ::-moz-placeholder,
+// ::-webkit-input-placeholder,
+// ::placeholder {
+//   color: $dark-50-flower !important;
+// }
