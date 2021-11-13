@@ -46,6 +46,14 @@ body {
   font-weight: 600;
 }
 
+a {
+  text-decoration: none;
+  color: #2659FB;
+}
+a:hover {
+  color: #E9155F;
+}
+
 /**
  * Set up the corresponding fonts
  */
@@ -127,6 +135,79 @@ body {
 }
 .color-white-flower {
   color: #FFFFFF;
+}
+
+a.btn-flower {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-flower {
+  font-weight: 600;
+  white-space: nowrap;
+  border-radius: 8px;
+  border-color: transparent;
+}
+.btn-flower {
+  background: #E9155F;
+  color: #FFFFFF;
+}
+.btn-flower.outlined {
+  background: #FFFFFF;
+  color: #141726;
+  border: 2px solid #E9155F;
+}
+.btn-flower.outlined-blue {
+  border: 1.5px solid #2659FB;
+  background: #D9E2FF;
+  color: #2659FB;
+}
+@media (min-width: 0) {
+  .btn-flower {
+    font-size: 14px;
+    min-width: 135px;
+    max-width: 170px;
+    min-height: 48px;
+    max-height: 48px;
+  }
+}
+@media (min-width: 992px) {
+  .btn-flower {
+    min-width: 150px;
+    max-width: 170px;
+    min-height: 37px;
+    max-height: 37px;
+  }
+}
+@media (min-width: 1200px) {
+  .btn-flower {
+    font-size: 14px;
+    min-width: 150px;
+    max-width: 170px;
+    min-height: 38px;
+    max-height: 38px;
+  }
+}
+@media (min-width: 1440px) {
+  .btn-flower {
+    font-size: 14px;
+    min-width: 180px;
+    max-width: 200px;
+    min-height: 40px;
+    max-height: 40px;
+  }
+}
+.btn-flower:hover, .btn-flower:focus {
+  text-decoration: none;
+  color: #FFFFFF !important;
+  background: #2659FB;
+}
+.btn-flower.outlined:hover, .btn-flower.outlined:focus {
+  text-decoration: none;
+  color: #FFFFFF !important;
+  background: #E9155F;
+  border: 1px solid transparent;
 }
 
 .sidebar {

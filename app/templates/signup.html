@@ -1,3 +1,38 @@
 {% extends 'base.html' %}
+{% block title%}Crear cuenta{% endblock %}
+
 {% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 text-center mb-3">
+            <h2 class="text-uppercase fw-bold">Crear cuenta</h2>
+        </div>
+        <div class="col-12 col-md-6 text-center">
+            <form method="POST">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" name="username" id="floatingName"
+                        placeholder="name@example.com">
+                    <label for="floatingName" class="form-label">Usuario</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" name="email" id="floatingInput"
+                        placeholder="name@example.com">
+                    <label for="floatingInput" class="form-label">Correo electrónico</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" name="password" id="floatingPassword"
+                        placeholder="Password">
+                    <label for="floatingPassword" class="form-label">Contraseña</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" name="confirm-password" id="floatingConfirmPassword"
+                        placeholder="Password">
+                    <label for="floatingConfirmPassword" class="form-label">Confirmar contraseña</label>
+                </div>
+                <p><small>¿Ya tienes una cuenta? <a href="/login">Inicia sesión</a></small></p>
+                <button class="btn btn-flower shadow" type="submit">Crear cuenta</button>
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock %}

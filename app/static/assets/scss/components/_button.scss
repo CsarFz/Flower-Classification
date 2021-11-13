@@ -1,0 +1,65 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+/// Size flower buttons
+
+$btn-flower-min-width: (xs: 135px, lg: 150px, xl: 150px, xxl: 180px);
+$btn-flower-max-width: (xs: 170px, lg: 170px, xl: 170px, xxl: 200px);
+$btn-flower-min-height: (xs: 48px, lg:37px, xl: 38px, xxl: 40px);
+$btn-flower-max-height: (xs: 48px, lg:37px, xl: 38px, xxl: 40px);
+
+a.btn-flower {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-flower {
+  font-weight: 600;
+  white-space: nowrap;
+  border-radius: 8px;
+  border-color: transparent;
+  // width: 100%;
+
+  & {
+    background: $primary-flower;
+    color: $white-flower;
+  }
+
+  &.outlined {
+    background: $white-flower;
+    color: $dark-flower;
+    border: 2px solid $primary-flower;
+  }
+
+  &.outlined-blue {
+    border: 1.5px solid $secondary-flower;
+    background: $secondary-25-flower;
+    color: $secondary-flower;
+  }
+
+  @each $size in $sizes {
+    @include breakpoint($size) {
+      font-size: map_get($paragraph-3, $size);
+      min-width: map_get($btn-flower-min-width, $size);
+      max-width: map_get($btn-flower-max-width, $size);;
+      min-height: map_get($btn-flower-min-height, $size);
+      max-height: map_get($btn-flower-max-height, $size);
+    }
+  }
+
+
+  @include hover-focus {
+    text-decoration: none;
+    color: $white-flower !important;
+    background: $secondary-flower;
+  }
+
+  @include hover-focus-outlined {
+    text-decoration: none;
+    color: $white-flower !important;
+    background: $primary-flower;
+    border: 1px solid transparent;
+  }
+}

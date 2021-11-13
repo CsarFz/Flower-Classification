@@ -4,6 +4,7 @@
         data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
+    {% if not user.is_authenticated %}
     <div class="navbar-nav mx-auto me-md-0 ms-md-auto flex-row">
         <div class="nav-item text-nowrap">
             <a class="nav-link px-3" href="/login"><i class="bi bi-person"></i> Iniciar sesión</a>
@@ -12,4 +13,5 @@
             <a class="nav-link px-3" href="/sign-up"><i class="bi bi-person-lines-fill"></i> Crear cuenta</a>
         </div>
     </div>
+    {% endif %}
 </header>
