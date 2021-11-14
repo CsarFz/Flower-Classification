@@ -1,5 +1,28 @@
 {% extends "base.html" %}
 {% block title %} Inicio {% endblock %}
 {% block content %}
-<h1>Home</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center mb-5">
+            <h1>¿Qué flor es?</h1>
+        </div>
+        <div class="col-12">
+            <div class="modal-upload shadow">
+                <div id="profile">
+                    <div class="dashes"></div>
+                    <label>Haga clic para buscar o arrastrar una imagen aquí</label>
+                </div>
+                <div class="editable">
+                    <h1>Drew Vosburg</h1>
+                </div>
+                <button class="btn btn-upload">Subir imagen</button>
+            </div>
+            <input type="file" id="mediaFile" accept="image/png, image/jpeg" />
+        </div>
+    </div>
+</div>
 {% endblock %}
+
+{% block javascripts %}
+<script src="/static/assets/js/upload.min.js"></script>
+{% endblock javascripts %} %}
