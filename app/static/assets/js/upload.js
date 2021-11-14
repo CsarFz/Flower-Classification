@@ -24,7 +24,9 @@ $('#profile').on('dragover', function () {
                 $('#profile').css('background-image', 'url(' + reader.result + ')').addClass('hasImage');
             }
         } else {
-            alert("¡Solamente estan permitidos archivos jpg/jpeg y png!");
+            $("#modalMessageLabel").text("Aviso");
+            $("#modal-text").text("¡Solamente estan permitidos archivos jpg/jpeg y png!");
+            $("#modal-message").modal('show');
         }
         
 
@@ -62,7 +64,9 @@ $('#mediaFile').on("change", function (e) {
                 $('#profile').css('background-image', 'url(' + reader.result + ')').addClass('hasImage');
             }
         } else {
-            alert("¡Solamente estan permitidos archivos jpg/jpeg y png!");
+            $("#modalMessageLabel").text("Aviso");
+            $("#modal-text").text("¡Solamente estan permitidos archivos jpg/jpeg y png!");
+            $("#modal-message").modal('show');
         }
         
     }

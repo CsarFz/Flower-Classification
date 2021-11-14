@@ -34,22 +34,40 @@ def sign_up():
         username  = request.form.get("username")
         password  = request.form.get("password")
         confirm_password = request.form.get("confirm-password")
+        errors = []
 
         email_exists = User.query.filter_by(email=email).first()
         username_exists = User.query.filter_by(username=username).first()
         if email_exists:
             flash("El correo electrónico ya existe, use otro.", category="error")
-        elif username_exists:
+            errors.append(1)
+        if username_exists:
             flash("El usuario ya existe, use otro.", category="error")
-        elif password != confirm_password:
-            flash("Las contraseñas no coinciden.", category="error")
+            errors.append(1)
+        print(f'User: -- {username} --')
+        if username.strip() == "":
+            flash("El campo de usuario está vacío.", category="error")
+            errors.append(1)
         elif len(username) <= 3:
             flash("El usuario es muy corto.", category="error")
+            errors.append(1)
+        if password.strip() == "":
+            flash("El campo de contraseña está vacío.", category="error")
+            errors.append(1)
         elif len(password) < 8:
             flash("La contraseña es muy corta, use al menos 8 caracteres.", category="error")
+            errors.append(1)
+        elif password != confirm_password:
+            flash("Las contraseñas no coinciden.", category="error")
+            errors.append(1)
+        if email.strip() == "":
+            flash("El campo de correo electrónico está vacío.", category="error")
+            errors.append(1)
         elif not validEmail(email):
             flash("El correo electrónico no es valido, ejemplo: nombre@ejemplo.com", category="error")
-        else:
+            errors.append(1)
+
+        if not errors:
             new_user = User(email=email, username=username, password=generate_password_hash(password, method="sha256"))
             db.session.add(new_user)
             db.session.commit()
