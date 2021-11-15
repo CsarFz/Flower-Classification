@@ -345,3 +345,14 @@ a.btn-flower {
   background-color: #FFFFFF;
   border: 1px solid #E9155F;
 }
+
+#show-password button {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  min-width: 70px;
+  min-height: 100%;
+  max-height: 100%;
+}
+#show-password label {
+  z-index: 3;
+}
