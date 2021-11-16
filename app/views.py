@@ -13,3 +13,7 @@ def home():
 @views.route("/login")
 def login():
     return render_template("login.html", user=current_user)
+
+@views.route("/acercade")
+def about():
+    return render_template("acercade.html", user=current_user)

@@ -7,17 +7,25 @@
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
-            <a href="/" class="nav-link active" aria-current="page">
+            <a href="/" class="nav-link text-white {{ 'active' if active_page == 'home' else '' }}" aria-current="page">
                 <i class="bi bi-house-door"></i>
                 Inicio
             </a>
         </li>
         <li>
-            <a href="#" class="nav-link text-white">
-                <i class="bi bi-flower2"></i>
-                Plantas
+            <a href="/acercade" class="nav-link text-white {{ 'active' if active_page == 'acercade' else '' }}">
+                <i class="bi bi-brightness-alt-high"></i>
+                Acerca de
             </a>
         </li>
+        {% if user.is_authenticated %}
+        <li>
+            <a href="#" class="nav-link text-white">
+                <i class="bi bi-flower2"></i>
+                Mis plantas
+            </a>
+        </li>
+        {% endif%}
     </ul>
     <hr>
     {% if user.is_authenticated %}
