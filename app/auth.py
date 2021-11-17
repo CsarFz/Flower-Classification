@@ -30,6 +30,7 @@ def login():
 @auth.route("/sign-up", methods=["GET", "POST"])
 def sign_up():
     if request.method == "POST":
+        name  = request.form.get("name")
         email = request.form.get("email")
         username  = request.form.get("username")
         password  = request.form.get("password")
@@ -44,7 +45,12 @@ def sign_up():
         if username_exists:
             flash("El usuario ya existe, use otro.", category="error")
             errors.append(1)
-        print(f'User: -- {username} --')
+        if name.strip() == "":
+            flash("El campo de nombre está vacío.", category="error")
+            errors.append(1)
+        elif len(name) <= 6:
+            flash("El nombre es muy corto.", category="error")
+            errors.append(1)
         if username.strip() == "":
             flash("El campo de usuario está vacío.", category="error")
             errors.append(1)
@@ -68,7 +74,7 @@ def sign_up():
             errors.append(1)
 
         if not errors:
-            new_user = User(email=email, username=username, password=generate_password_hash(password, method="sha256"))
+            new_user = User(name=name, email=email, username=username, password=generate_password_hash(password, method="sha256"))
             db.session.add(new_user)
             db.session.commit()
             login_user(new_user, remember=True)

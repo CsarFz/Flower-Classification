@@ -356,3 +356,47 @@ a.btn-flower {
 #show-password label {
   z-index: 3;
 }
+
+.card-profile {
+  width: 350px;
+  background-color: #efefef;
+  border: none;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.card-profile:hover .image img {
+  transform: scale(1.5);
+}
+.card-profile .image img {
+  transition: all 0.5s;
+}
+.card-profile .btn {
+  height: 140px;
+  width: 140px;
+  border-radius: 50%;
+}
+.card-profile .name {
+  font-size: 22px;
+  font-weight: bold;
+}
+.card-profile .username {
+  font-size: 14px;
+  font-weight: 600;
+}
+.card-profile .number {
+  font-size: 22px;
+  font-weight: bold;
+}
+.card-profile hr {
+  border: 1px solid #141726;
+  height: 1px;
+  width: 100%;
+}
+.card-profile .join {
+  font-size: 14px;
+  color: #a0a0a0;
+  font-weight: bold;
+}
+.card-profile .date {
+  background-color: #ccc;
+}

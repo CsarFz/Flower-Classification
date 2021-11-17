@@ -9,17 +9,19 @@
             <h1 class="text-bold">¿Qué flor es?</h1>
         </div>
         <div class="col-12">
-            <div class="modal-upload shadow">
-                <div id="profile">
-                    <div class="dashes"></div>
-                    <label>Haga clic para buscar o arrastrar una imagen aquí</label>
+            <form action="/classify-flower" method="POST" enctype="multipart/form-data">
+                <div class="modal-upload shadow">
+                    <div id="profile">
+                        <div class="dashes"></div>
+                        <label>Haga clic para buscar o arrastrar una imagen aquí</label>
+                    </div>
+                    <div class="editable">
+                        <h1>Lorem ipsum</h1>
+                    </div>
+                    <button type="submit" class="btn btn-upload shadow-sm">Subir imagen</button>
                 </div>
-                <div class="editable">
-                    <h1>Drew Vosburg</h1>
-                </div>
-                <button class="btn btn-upload shadow-sm">Subir imagen</button>
-            </div>
-            <input type="file" id="mediaFile" accept="image/png, image/jpeg" />
+                <input type="file" id="mediaFile" name="image" accept="image/png, image/jpeg" />
+            </form>
         </div>
     </div>
 </div>

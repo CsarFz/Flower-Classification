@@ -6,12 +6,6 @@
     </a>
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
-        <li class="nav-item">
-            <a href="/" class="nav-link text-white {{ 'active' if active_page == 'home' else '' }}" aria-current="page">
-                <i class="bi bi-house-door"></i>
-                Inicio
-            </a>
-        </li>
         <li>
             <a href="/acercade" class="nav-link text-white {{ 'active' if active_page == 'acercade' else '' }}">
                 <i class="bi bi-brightness-alt-high"></i>
@@ -19,6 +13,12 @@
             </a>
         </li>
         {% if user.is_authenticated %}
+        <li class="nav-item">
+            <a href="/" class="nav-link text-white {{ 'active' if active_page == 'home' else '' }}" aria-current="page">
+                <i class="bi bi-image-alt"></i>
+                ¿Qué flor es?
+            </a>
+        </li>
         <li>
             <a href="#" class="nav-link text-white">
                 <i class="bi bi-flower2"></i>
@@ -36,7 +36,7 @@
             <strong>{{ user.username }}</strong>
         </a>
         <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-            <li><a class="dropdown-item" href="#">Perfil</a></li>
+            <li><a class="dropdown-item" href="/profile">Perfil</a></li>
             <li>
                 <hr class="dropdown-divider">
             </li>
