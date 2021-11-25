@@ -11,4 +11,19 @@ $(function () {
             $('#show-password i').addClass("bi-eye-fill");
         }
     });
+
+    $("#form-upload").on('submit', function () {
+        fetch("classify-flower", {
+                method: "POST"
+            })
+            .then(function (res) {
+                res.json()
+            })
+            .then(function (data) {
+                console.log(data);
+            })
+            .catch(function (e) {
+                console.log(e);
+            });
+    })
 });

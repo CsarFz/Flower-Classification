@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %} Mis flores {% endblock %}
+{% set active_page = "myflowers" %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="col-12 text-center mb-4">
+                <h1 class="text-bold">Mis flores</h1>
+            </div>
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        {% for flower in flowers %}
+                            <img src="{{ flower.path }}" alt="{{flower.name}}" class="img-fluid rounded-3" width="250" />
+                            <p class="text-uppercase">{{ flower.name }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

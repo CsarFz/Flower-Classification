@@ -5,18 +5,18 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col-12 text-center mb-5">
+        <!-- <div class="col-12 text-center mb-5">
             <h1 class="text-bold">¿Qué flor es?</h1>
-        </div>
+        </div> -->
         <div class="col-12">
-            <form action="/classify-flower" method="POST" enctype="multipart/form-data">
+            <form action="/classify-flower" method="POST" enctype="multipart/form-data" id="form-upload">
                 <div class="modal-upload shadow">
                     <div id="profile">
                         <div class="dashes"></div>
-                        <label>Haga clic para buscar o arrastrar una imagen aquí</label>
+                        <label>Haga clic aquí para buscar una imagen</label>
                     </div>
                     <div class="editable">
-                        <h1>Lorem ipsum</h1>
+                        <h1>¿Qué flor es?</h1>
                     </div>
                     <button type="submit" class="btn btn-upload shadow-sm">Subir imagen</button>
                 </div>
