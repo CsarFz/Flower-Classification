@@ -18,6 +18,13 @@
                         <small>{{ flower.date_created.strftime('%d/%B/%Y') }}</small>
                     </div>
                     {% endfor %}
+
+                    {% if flower_len <= 0 %}
+                    <div class="col-12 text-center">
+                        <h3 class="text-uppercase fw-bold">Aún no tiene flores registradas</h3>
+                        <a href="/" class="btn btn-flower outlined-blue mx-auto">Registrar flores</a>
+                    </div>
+                    {% endif %}
                 </div>
             </div>
         </div>

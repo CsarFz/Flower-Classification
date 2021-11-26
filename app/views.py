@@ -159,7 +159,7 @@ def myflowers():
     
     flowers = user.flowers
 
-    return render_template("myflowers.html", user=current_user, flowers=flowers)
+    return render_template("myflowers.html", user=current_user, flowers=flowers, flower_len=len(flowers))
 
 
 @views.route("/classify-flower", methods=["GET", "POST"])
