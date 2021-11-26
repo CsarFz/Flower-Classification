@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %} ¿Qué flor es? {% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="col-12 text-center mb-4">
+                <h1 class="text-bold">¿Qué flor es?</h1>
+            </div>
+            <div class="col-12 text-center">
+                <img src="{{ path }}" alt="{{ clase }}" class="img-fluid rounded-3" width="450" />
+                <p class="text-uppercase">{{ clase }}</p>
+                <!-- <small class="fw-bold">{{ argument }}%</small> -->
+                <div class="mt-4">
+                    <a href="/" class="btn btn-flower outlined d-inline-block mx-2 px-2">Volver a subir una flor</a>
+                    <a href="/myflowers" class="btn btn-flower d-inline-block mx-2">Ver mis flores</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

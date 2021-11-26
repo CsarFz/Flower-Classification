@@ -132,3 +132,5 @@ dmypy.json
 
 node_modules
 vendor
+database.db
+app/static/assets/img/flowers

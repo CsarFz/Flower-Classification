@@ -138,7 +138,14 @@ def about():
 @views.route("/profile")
 @login_required
 def profile():
-    return render_template("profile.html", user=current_user)
+    user = User.query.filter_by(username=current_user.username).first()
+
+    if not user:
+        flash('No existe el usuario.', category='error')
+        return redirect(url_for('views.login'))
+    
+    flowers = user.flowers
+    return render_template("profile.html", user=current_user, flower_len=len(flowers))
 
 
 @views.route("/myflowers")
@@ -147,7 +154,7 @@ def myflowers():
     user = User.query.filter_by(username=current_user.username).first()
 
     if not user:
-        flash('No user with that username exists.', category='error')
+        flash('No existe el usuario.', category='error')
         return redirect(url_for('views.login'))
     
     flowers = user.flowers
@@ -182,6 +189,7 @@ def classify_flower():
                 # print("Indice del argumento mayor: ", np.argmax(prediccion[0]))
                 # print("Predicción de la clase que genera el modelo: ", clases[np.argmax(prediccion[0])])
 
+                argument = np.argmax(prediccion[0])
                 class_ = classes[np.argmax(prediccion[0])]
                 path = path.split(os.path.dirname(os.path.realpath(__file__)))
 
@@ -189,7 +197,6 @@ def classify_flower():
                 db.session.add(flower)
                 db.session.commit()
                 
-                return render_template("index.html", user=current_user)
-                #-return jsonify({ "class":  class_, "path": path })
+                return render_template("flower.html", user=current_user, clase=class_, path=path[1], argument=argument)
             else:
                 flash("La imagen debe tener un nombre.", category="error")
