@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, jsonify, redirect, url_for
+from flask import Blueprint, render_template, request, redirect, url_for
 from flask.helpers import flash
 from flask_login import login_required, current_user
 from .models import Flower, User
@@ -127,7 +127,17 @@ def home():
 
 @views.route("/login")
 def login():
-    return render_template("login.html", user=current_user)
+    if current_user.is_authenticated:
+        return redirect(url_for("views.home"))
+    else:
+        return render_template("login.html", user=current_user)
+
+@views.route("/sign-up")
+def sign_up():
+    if current_user.is_authenticated:
+        return redirect(url_for("views.home"))
+    else:
+        return render_template("signup.html", user=current_user)
 
 
 @views.route("/acercade")
@@ -199,4 +209,5 @@ def classify_flower():
                 
                 return render_template("flower.html", user=current_user, clase=class_, path=path[1], argument=argument)
             else:
-                flash("La imagen debe tener un nombre.", category="error")
+                flash("Por favor seleccione una imagen.", category="error")
+                return redirect(url_for('views.home'))
