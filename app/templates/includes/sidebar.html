@@ -7,14 +7,14 @@
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
         <li>
-            <a href="/acercade" class="nav-link text-white {{ 'active' if active_page == 'acercade' else '' }}">
+            <a href="/" class="nav-link text-white {{ 'active' if active_page == 'home' else '' }}">
                 <i class="bi bi-brightness-alt-high"></i>
                 Acerca de
             </a>
         </li>
         {% if user.is_authenticated %}
         <li class="nav-item">
-            <a href="/" class="nav-link text-white {{ 'active' if active_page == 'home' else '' }}" aria-current="page">
+            <a href="/what-flower-is-it" class="nav-link text-white {{ 'active' if active_page == 'what-flower-is-it' else '' }}" aria-current="page">
                 <i class="bi bi-image-alt"></i>
                 ¿Qué flor es?
             </a>

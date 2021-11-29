@@ -120,7 +120,6 @@ classes = [
 
 @views.route("/")
 @views.route("/home")
-@login_required
 def home():
     return render_template("index.html", user=current_user)
 
@@ -132,6 +131,7 @@ def login():
     else:
         return render_template("login.html", user=current_user)
 
+
 @views.route("/sign-up")
 def sign_up():
     if current_user.is_authenticated:
@@ -140,9 +140,10 @@ def sign_up():
         return render_template("signup.html", user=current_user)
 
 
-@views.route("/acercade")
-def about():
-    return render_template("acercade.html", user=current_user)
+@views.route("/what-flower-is-it")
+@login_required
+def what_flower_is_it():
+    return render_template("what-flower-is-it.html", user=current_user)
 
 
 @views.route("/profile")
@@ -153,7 +154,7 @@ def profile():
     if not user:
         flash('No existe el usuario.', category='error')
         return redirect(url_for('views.login'))
-    
+
     flowers = user.flowers
     return render_template("profile.html", user=current_user, flower_len=len(flowers))
 
@@ -166,10 +167,13 @@ def myflowers():
     if not user:
         flash('No existe el usuario.', category='error')
         return redirect(url_for('views.login'))
-    
+
     flowers = user.flowers
 
-    return render_template("myflowers.html", user=current_user, flowers=flowers, flower_len=len(flowers))
+    return render_template("myflowers.html",
+                        user=current_user,
+                        flowers=flowers,
+                        flower_len=len(flowers))
 
 
 @views.route("/classify-flower", methods=["GET", "POST"])
@@ -181,15 +185,17 @@ def classify_flower():
 
             if not image.filename == "":
                 filename = secure_filename(image.filename)
-                
-                path = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'static/assets/img/flowers', filename)
+
+                path = os.path.join(
+                    os.path.dirname(os.path.realpath(__file__)),
+                    'static/assets/img/flowers', filename)
                 image.save(path)
 
                 # Imagen a Tensorflow
                 imagen_externa = tf.keras.preprocessing.image.load_img(path)
                 matriz_imag_ext = tf.keras.preprocessing.image.img_to_array(
                     imagen_externa)
-                
+
                 # Cambiar el tamaño de la imagen
                 matriz_imag_ext = tf.image.resize(matriz_imag_ext, [512, 512])
 
@@ -203,11 +209,17 @@ def classify_flower():
                 class_ = classes[np.argmax(prediccion[0])]
                 path = path.split(os.path.dirname(os.path.realpath(__file__)))
 
-                flower = Flower(name=class_, user_id=current_user.id, path=path[1])
+                flower = Flower(name=class_,
+                                user_id=current_user.id,
+                                path=path[1])
                 db.session.add(flower)
                 db.session.commit()
-                
-                return render_template("flower.html", user=current_user, clase=class_, path=path[1], argument=argument)
+
+                return render_template("flower.html",
+                                        user=current_user,
+                                        clase=class_,
+                                        path=path[1],
+                                        argument=argument)
             else:
                 flash("Por favor seleccione una imagen.", category="error")
                 return redirect(url_for('views.home'))

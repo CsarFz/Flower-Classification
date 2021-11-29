@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %} Inicio {% endblock %}
+{% set active_page = "what-flower-is-it" %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <!-- <div class="col-12 text-center mb-5">
+            <h1 class="text-bold">¿Qué flor es?</h1>
+        </div> -->
+        <div class="col-12">
+            <form action="/classify-flower" method="POST" enctype="multipart/form-data" id="form-upload">
+                <div class="modal-upload shadow">
+                    <div id="profile">
+                        <div class="dashes"></div>
+                        <label>Haga clic aquí para buscar una imagen</label>
+                    </div>
+                    <div class="editable">
+                        <h1>¿Qué flor es?</h1>
+                    </div>
+                    <button type="submit" class="btn btn-upload shadow-sm">Subir imagen</button>
+                </div>
+                <input type="file" id="mediaFile" name="image" accept="image/png, image/jpeg" />
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+<script src="/static/assets/js/upload.min.js"></script>
+{% endblock javascripts %} %}
