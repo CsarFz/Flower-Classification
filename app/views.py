@@ -199,11 +199,11 @@ def classify_flower():
                 # Cambiar el tamaño de la imagen
                 matriz_imag_ext = tf.image.resize(matriz_imag_ext, [512, 512])
 
+                # Normalizar la imagen
+                matriz_imag_ext = matriz_imag_ext / 255
+
                 # Predicción de la imagen cargada al modelo ya entrenado
                 prediccion = model.predict(np.array([matriz_imag_ext]))
-                # print("Vector de salida de la red: ", prediccion[0])
-                # print("Indice del argumento mayor: ", np.argmax(prediccion[0]))
-                # print("Predicción de la clase que genera el modelo: ", clases[np.argmax(prediccion[0])])
 
                 argument = np.argmax(prediccion[0])
                 class_ = classes[np.argmax(prediccion[0])]
