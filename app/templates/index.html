@@ -20,9 +20,24 @@
         </div>
         <div class="col-12 col-lg-6 text-center">
             <img src="/static/assets/img/flor-de-cerezo.png" alt="flower" class="img-fluid" width="350" />
+            {% if user.is_authenticated %}
             <a href="/what-flower-is-it" class="btn btn-flower outlined-blue mx-auto">
                 Empezar
             </a>
+            {% else %}
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <a href="/login" class="btn btn-flower outlined ms-auto">
+                        Iniciar Sesión
+                    </a>
+                </div>
+                <div class="col-12 col-md-6">
+                    <a href="/sign-up" class="btn btn-flower me-auto">
+                        Crear cuenta
+                    </a>
+                </div>
+            </div>
+            {% endif %}
         </div>
     </div>
 </div>
