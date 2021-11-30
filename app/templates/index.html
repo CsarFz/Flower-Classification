@@ -4,9 +4,25 @@
 
 {% block content %}
 <div class="container">
-    <div class="row">
+    <div class="row justify-content-center">
         <div class="col-12 text-center mb-4">
-            <h1 class="fw-bold">Acerca de</h1>
+            <h1 class="fw-bold"><span>Acerca</span> de</h1>
+        </div>
+        <div class="col-12 col-lg-6 about">
+            <p>Se diseñó una aplicación web que es capaz de identificar qué tipo de flor se observa en una imagen con
+                una precisión mayor al 90%. Su funcionamiento consiste en un sistema de clasificación, donde se debe
+                subir una imagen en formato .jpg o .png y se devolverá el nombre de la flor que aparezca en esta.</p>
+            <p>El contexto del problema al que responde es que hay una cantidad enorme de especies de flores en el
+                mundo, por lo que existe una necesidad de clasificación, en este caso por simplicidad, se clasifican 104
+                tipos de flores. El usuario destinado a este tipo de aplicación son trabajadores de florerías,
+                organizaciones ambientales, personas interesadas en la jardinería, campistas y exploradores que aman la
+                naturaleza.</p>
+        </div>
+        <div class="col-12 col-lg-6 text-center">
+            <img src="/static/assets/img/flor-de-cerezo.png" alt="flower" class="img-fluid" width="350" />
+            <a href="/what-flower-is-it" class="btn btn-flower outlined-blue mx-auto">
+                Empezar
+            </a>
         </div>
     </div>
 </div>

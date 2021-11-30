@@ -100,6 +100,21 @@
     }
 }
 
+h1 span {
+    color: $primary-flower;
+}
+
+.about {
+    & p {
+        text-align: justify;
+    }
+}
+
+.div-credits {
+    bottom: 10px;
+    left: 0;
+    right: 0;
+}
 
 .editable {
     position: relative;
@@ -195,7 +210,7 @@
         color: #a0a0a0;
         font-weight: bold
     }
-    
+
     & .date {
         background-color: #ccc
     }

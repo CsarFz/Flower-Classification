@@ -14,7 +14,9 @@
         </li>
         {% if user.is_authenticated %}
         <li class="nav-item">
-            <a href="/what-flower-is-it" class="nav-link text-white {{ 'active' if active_page == 'what-flower-is-it' else '' }}" aria-current="page">
+            <a href="/what-flower-is-it"
+                class="nav-link text-white {{ 'active' if active_page == 'what-flower-is-it' else '' }}"
+                aria-current="page">
                 <i class="bi bi-image-alt"></i>
                 ¿Qué flor es?
             </a>
@@ -44,4 +46,9 @@
         </ul>
     </div>
     {% endif %}
+    <div class="text-center position-absolute div-credits">
+        <small>Iconos diseñados por <a href="https://www.flaticon.es/autores/maxicons" title="max.icons">max.icons</a>
+            from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a>
+        </small>
+    </div>
 </div>

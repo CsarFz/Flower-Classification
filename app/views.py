@@ -223,3 +223,7 @@ def classify_flower():
             else:
                 flash("Por favor seleccione una imagen.", category="error")
                 return redirect(url_for('views.home'))
+        else:
+            return redirect(url_for('views.home'))
+    else:
+        return redirect(url_for('views.home'))
